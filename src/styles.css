@@ -1,0 +1,732 @@
+/* Site styles. Colors live in the .az block (--bg, --acc, ...). Fonts are self-hosted in src/fonts. */
+
+@font-face {
+  font-family: IBM Plex Sans Arabic;
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url(./fonts/IBMPlexSansArabic-400.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: IBM Plex Sans Arabic;
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  src: url(./fonts/IBMPlexSansArabic-500.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: IBM Plex Sans Arabic;
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  src: url(./fonts/IBMPlexSansArabic-600.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: IBM Plex Sans Arabic;
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url(./fonts/IBMPlexSansArabic-700.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: Inter;
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url(./fonts/Inter-400.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: Inter;
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  src: url(./fonts/Inter-500.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: Inter;
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  src: url(./fonts/Inter-600.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: Inter;
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url(./fonts/Inter-700.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: Inter;
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+  src: url(./fonts/Inter-800.ttf) format("truetype");
+}
+
+.az * {
+  box-sizing: border-box;
+}
+
+.az html,.az body,.az #root {
+  margin: 0;
+  min-height: 100%;
+}
+
+.az body {
+  background: #0a0e0d;
+}
+
+.az {
+  --bg: #0a0e0d;
+  --bg2:#101614;
+  --card: #121917;
+  --line: #1f2a27;
+  --fg: #eef2f0;
+  --mut: #9aa8a3;
+  --acc: #5eead4;
+  --acc2:#38bdf8;
+  --r: 16px;
+}
+
+.az {
+  scroll-margin-top: 0;
+  padding-top: 0;
+  position: relative;
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: Inter,IBM Plex Sans Arabic,system-ui,sans-serif;
+  line-height: 1.7;
+  font-size: 17px;
+  -webkit-font-smoothing: antialiased;
+}
+
+.az[dir=rtl] body {
+  font-family: IBM Plex Sans Arabic,Inter,system-ui,sans-serif;
+  line-height: 1.9;
+}
+
+.az:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 0;
+  background: radial-gradient(700px 380px at 85% -5%,rgba(94,234,212,.12),transparent 70%),radial-gradient(600px 340px at 5% 0%,rgba(56,189,248,.08),transparent 70%);
+}
+
+.az a {
+  color: var(--acc);
+  text-decoration: none;
+}
+
+.az a:hover {
+  text-decoration: underline;
+}
+
+.az .az-w {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0 28px;
+  position: relative;
+}
+
+.az header.azh {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background: #0a0e0dcc;
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+
+.az header.azh .az-w {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 68px;
+  gap: 16px;
+}
+
+.az .az-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--fg);
+  font-weight: 700;
+  letter-spacing: -.01em;
+}
+
+.az .az-brand:hover {
+  text-decoration: none;
+}
+
+.az .az-logo {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: linear-gradient(135deg,var(--acc),var(--acc2));
+  color: #04110e;
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  font-size: .85rem;
+  letter-spacing: 0;
+  font-family: Inter,sans-serif;
+}
+
+.az nav {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.az nav a {
+  color: var(--mut);
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: .93rem;
+  font-weight: 500;
+}
+
+.az nav a:hover,.az nav a.az-on {
+  color: var(--fg);
+  background: #ffffff0f;
+  text-decoration: none;
+}
+
+.az nav a.az-lang {
+  border: 1px solid var(--line);
+  color: var(--fg);
+  margin-inline-start: 10px;
+}
+
+.az main.azm {
+  padding: 0 0 30px;
+}
+
+.az .az-hero {
+  padding: 96px 0 64px;
+}
+
+.az .az-eyebrow {
+  display: inline-block;
+  color: var(--acc);
+  font-size: .85rem;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border: 1px solid rgba(94,234,212,.3);
+  border-radius: 999px;
+  background: #5eead40f;
+  margin-bottom: 26px;
+}
+
+.az[dir=rtl] .az-eyebrow {
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.az h1 {
+  font-size: clamp(2.2rem,5.2vw,3.7rem);
+  line-height: 1.12;
+  letter-spacing: -.03em;
+  margin: 0 0 22px;
+  max-width: 18em;
+  font-weight: 800;
+}
+
+.az[dir=rtl] h1 {
+  line-height: 1.35;
+  letter-spacing: 0;
+}
+
+.az h1 .az-g {
+  background: linear-gradient(90deg,var(--acc),var(--acc2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.az .az-sub {
+  font-size: 1.2rem;
+  color: var(--mut);
+  max-width: 38em;
+  margin: 0 0 34px;
+}
+
+.az .az-btns {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.az .az-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 13px 24px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: .97rem;
+  border: 1px solid var(--line);
+  color: var(--fg);
+}
+
+.az .az-btn:hover {
+  text-decoration: none;
+  border-color: var(--acc);
+}
+
+.az .az-btn.az-p {
+  background: linear-gradient(135deg,var(--acc),var(--acc2));
+  color: #04110e;
+  border-color: transparent;
+}
+
+.az .az-btn.az-p:hover {
+  filter: brightness(1.08);
+}
+
+.az .az-stats {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  background: var(--card);
+  overflow: hidden;
+}
+
+.az .az-stat {
+  padding: 26px 24px;
+  border-inline-end: 1px solid var(--line);
+}
+
+.az .az-stat:last-child {
+  border: 0;
+}
+
+.az .az-stat b {
+  display: block;
+  font-size: 2.1rem;
+  font-weight: 800;
+  letter-spacing: -.02em;
+  background: linear-gradient(90deg,var(--acc),var(--acc2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  line-height: 1.2;
+  direction: ltr;
+  text-align: start;
+}
+
+.az .az-stat span {
+  color: var(--mut);
+  font-size: .9rem;
+  line-height: 1.5;
+  display: block;
+  margin-top: 4px;
+}
+
+.az section {
+  padding: 72px 0 0;
+}
+
+.az h2 {
+  font-size: 1.9rem;
+  letter-spacing: -.02em;
+  margin: 0 0 28px;
+  font-weight: 700;
+}
+
+.az[dir=rtl] h2 {
+  letter-spacing: 0;
+}
+
+.az .az-three {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 18px;
+}
+
+.az .az-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  padding: 28px;
+}
+
+.az .az-card h3 {
+  margin: 0 0 10px;
+  font-size: 1.1rem;
+}
+
+.az .az-card p {
+  margin: 0;
+  color: var(--mut);
+  font-size: .98rem;
+}
+
+.az .az-grid {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 18px;
+}
+
+.az a.az-case {
+  display: flex;
+  flex-direction: column;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  padding: 28px;
+  color: var(--fg);
+  transition: .2s;
+}
+
+.az a.az-case:hover {
+  text-decoration: none;
+  border-color: #5eead480;
+  transform: translateY(-3px);
+  background: var(--bg2);
+}
+
+.az .az-chips {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+
+.az .az-chip {
+  font-size: .76rem;
+  font-weight: 600;
+  padding: 4px 11px;
+  border-radius: 999px;
+  background: #5eead41a;
+  color: var(--acc);
+  letter-spacing: .02em;
+}
+
+.az .az-chip.az-o {
+  background: #ffffff0f;
+  color: var(--mut);
+}
+
+.az a.az-case h3 {
+  margin: 0 0 10px;
+  font-size: 1.2rem;
+  line-height: 1.4;
+  letter-spacing: -.01em;
+}
+
+.az a.az-case p {
+  margin: 0 0 18px;
+  color: var(--mut);
+  font-size: .96rem;
+  flex: 1;
+}
+
+.az a.az-case .az-more {
+  color: var(--acc);
+  font-weight: 600;
+  font-size: .9rem;
+}
+
+.az .az-tl {
+  position: relative;
+  border-inline-start: 2px solid var(--line);
+  margin-inline-start: 6px;
+  padding-inline-start: 30px;
+}
+
+.az .az-tl .az-it {
+  position: relative;
+  padding-bottom: 34px;
+}
+
+.az .az-tl .az-it:last-child {
+  padding-bottom: 0;
+}
+
+.az .az-tl .az-it:before {
+  content: "";
+  position: absolute;
+  inset-inline-start: -39px;
+  top: 8px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 3px solid var(--acc);
+}
+
+.az .az-tl .az-d {
+  color: var(--acc);
+  font-size: .85rem;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.az .az-tl h3 {
+  margin: 0;
+  font-size: 1.15rem;
+}
+
+.az .az-tl .az-o {
+  color: var(--mut);
+  font-size: .95rem;
+  margin-bottom: 6px;
+}
+
+.az .az-tl p {
+  margin: 0;
+  color: var(--mut);
+  font-size: .97rem;
+}
+
+.az .az-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.az .az-skills span {
+  padding: 9px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--card);
+  font-size: .92rem;
+  direction: ltr;
+}
+
+.az .az-band {
+  margin-top: 90px;
+  padding: 48px 40px;
+  border-radius: 22px;
+  border: 1px solid rgba(94,234,212,.25);
+  background: linear-gradient(135deg,#5eead41a,#38bdf80f);
+}
+
+.az .az-band h2 {
+  margin-bottom: 10px;
+  font-size: 1.6rem;
+}
+
+.az .az-band p {
+  color: var(--mut);
+  margin: 0 0 24px;
+  max-width: 36em;
+}
+
+.az footer.azf {
+  margin-top: 80px;
+  border-top: 1px solid var(--line);
+  padding: 30px 0 48px;
+  color: var(--mut);
+  font-size: .9rem;
+}
+
+.az footer.azf .az-w {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.az footer.azf a {
+  color: var(--mut);
+}
+
+.az footer.azf a:hover {
+  color: var(--acc);
+}
+
+.az .az-phead {
+  padding: 76px 0 8px;
+}
+
+.az .az-phead h1 {
+  font-size: clamp(2rem,4.4vw,3rem);
+  max-width: 20em;
+}
+
+.az .az-crumb {
+  font-size: .9rem;
+  margin-bottom: 22px;
+  display: inline-block;
+}
+
+.az .az-cs {
+  display: grid;
+  grid-template-columns: minmax(0,1fr) 300px;
+  gap: 48px;
+  padding-top: 40px;
+  align-items: start;
+}
+
+.az .az-cs h2 {
+  font-size: 1.25rem;
+  margin: 38px 0 10px;
+}
+
+.az .az-cs h2:first-child {
+  margin-top: 0;
+}
+
+.az .az-cs p {
+  margin: 0;
+  color: #c9d3cf;
+}
+
+.az .az-glance {
+  position: sticky;
+  top: 90px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  padding: 24px;
+}
+
+.az .az-glance dt {
+  color: var(--acc);
+  font-size: .76rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  margin-bottom: 3px;
+}
+
+.az[dir=rtl] .az-glance dt {
+  letter-spacing: 0;
+  text-transform: none;
+  font-size: .85rem;
+}
+
+.az .az-glance dd {
+  margin: 0 0 20px;
+  font-size: .95rem;
+  color: #dbe3e0;
+  line-height: 1.6;
+}
+
+.az .az-glance dd:last-child {
+  margin: 0;
+}
+
+.az .az-prose {
+  max-width: 720px;
+  padding-top: 36px;
+}
+
+.az .az-prose p {
+  color: #c9d3cf;
+  margin: 0 0 18px;
+}
+
+.az .az-list {
+  display: grid;
+  gap: 14px;
+  max-width: 760px;
+}
+
+.az .az-list .az-card {
+  padding: 22px 26px;
+}
+
+.az .az-two {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+@media (max-width:860px) {
+  .az .az-stats {
+    grid-template-columns: repeat(2,1fr);
+  }
+  .az .az-stat:nth-child(2) {
+    border-inline-end: 0;
+  }
+  .az .az-stat:nth-child(-n+2) {
+    border-bottom: 1px solid var(--line);
+  }
+  .az .az-three,.az .az-grid,.az .az-two,.az .az-cs {
+    grid-template-columns: 1fr;
+  }
+  .az .az-glance {
+    position: static;
+    order: -1;
+  }
+  .az .az-hero {
+    padding: 60px 0 44px;
+  }
+  .az nav a {
+    padding: 7px 10px;
+    font-size: .86rem;
+  }
+  .az .az-brand span.az-n {
+    display: none;
+  }
+  .az .az-w {
+    padding: 0 20px;
+  }
+  .az .az-band {
+    padding: 34px 24px;
+  }
+}
+
+@media (max-width:420px) {
+  .az header.azh .az-w {
+    gap: 6px;
+    padding: 0 12px;
+  }
+  .az nav {
+    gap: 0;
+  }
+  .az nav a {
+    padding: 6px 7px;
+    font-size: .78rem;
+  }
+  .az nav a.az-lang {
+    margin-inline-start: 4px;
+  }
+  .az .az-logo {
+    width: 32px;
+    height: 32px;
+  }
+  .az .az-w {
+    padding: 0 16px;
+  }
+  .az .az-stat {
+    padding: 20px 16px;
+  }
+  .az .az-stat b {
+    font-size: 1.7rem;
+  }
+}
+
+html,body,#root {
+  margin: 0;
+  padding: 0;
+  background: #0a0e0d;
+}
+
+@media (max-width:700px) {
+  .az {
+    padding-top: 0;
+  }
+}
+
